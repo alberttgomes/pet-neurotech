@@ -1,17 +1,12 @@
 package br.unicap.pet.neurotech;
 
-/**
- * Hello world!
- */
 public final class App {
     private App() {
     }
 
-    /**
-     * Says hello to the world.
-     * @param args The arguments of the program.
-     */
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        int a = 10;
+        Integer i = 10;
+        //Pessoa p = new Pessoa();
     }
 }

@@ -1,11 +1,17 @@
 package br.unicap.pet.neurotech.model.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ClienteDAOMemoria implements ClienteDAO {
 
-    private ArrayList<Conta> clientes;
+    private List<Conta> clientes;
     private static ClienteDAOMemoria self;
+
+
+    public ClienteDAOMemoria(){
+        clientes = new ArrayList<Conta>();
+    }
 
     @Override
     public boolean buscarConta(int numConta) {

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MenuPrincipal",
+            "request": "launch",
+            "mainClass": "br.unicap.pet.neurotech.view.MenuPrincipal",
+            "projectName": "banco"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

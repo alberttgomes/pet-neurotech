@@ -22,10 +22,12 @@ public class MenuCliente {
                     cv.depositar();
                     break;
                 case 3:
+                    System.out.println("Voltando!!");
+                    break;
                 default:
                     System.out.println("Opcao invalida!!");
             }
-        } while (op != 7);
+        } while (op != 3);
 
     }
 
