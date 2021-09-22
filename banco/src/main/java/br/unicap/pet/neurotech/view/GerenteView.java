@@ -10,13 +10,15 @@ public class GerenteView {
     public void criarConta() {
         System.out.println("Número da conta: ");
         int numConta = Leitor.getLeitor().nextInt();
+        String nome = Leitor.getLeitor().nextLine();
+        String senha = Leitor.getLeitor().nextLine();
         
         System.out.println("É uma conta bonus?");
         boolean ehBonus = Leitor.getLeitor().nextBoolean();
         if (ehBonus){
-            acesso.criarContaBonus(numConta);
+            acesso.criarContaBonus(numConta, nome, senha);
         } else{
-            acesso.criarConta(numConta);
+            acesso.criarConta(numConta, nome, senha);
         }
     }
     

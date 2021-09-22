@@ -1,10 +1,11 @@
 package br.unicap.pet.neurotech.view;
 
+import br.unicap.pet.neurotech.model.exceptions.UsuarioNaoEncontradoException;
 import br.unicap.pet.neurotech.view.util.Leitor;
 
 public class MenuPrincipal {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UsuarioNaoEncontradoException {
         int op;
         //MenuCliente acessoCliente = new MenuCliente();
         MenuGerente acessoGerente = new MenuGerente();
@@ -20,7 +21,7 @@ public class MenuPrincipal {
             switch (op) {
 
                 case 1:
-                    login.Entrar(null, null);
+                    login.Entrar();
                     break;
                 case 2:
                     acessoGerente.Menu();

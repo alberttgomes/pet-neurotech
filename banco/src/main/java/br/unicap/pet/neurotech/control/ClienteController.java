@@ -29,7 +29,7 @@ public class ClienteController {
     }
     
     public boolean entrar(String nome, String senha) throws UsuarioNaoEncontradoException {
-    	return dao.buscarLogin(senha, senha);
+    	return dao.buscarLogin(nome, senha);
     }
     
 }

@@ -62,11 +62,12 @@ public class ClienteDAOMemoria implements ClienteDAO {
         }
     }
 
-    @Override
-    public void criarConta(int numConta) {
+    
+	@Override
+    public void criarConta(int numConta, String nome, String senha) {
         boolean b = buscarConta(numConta);
         if (!b){
-            Conta c = new Conta(numConta);
+            Conta c = new Conta(numConta, nome, senha);
             contas.add(c);
         }
     }
@@ -83,11 +84,12 @@ public class ClienteDAOMemoria implements ClienteDAO {
         }
     }
 
-    @Override
-    public void criarContaBonus(int numConta) {
+    
+	@Override
+    public void criarContaBonus(int numConta, String nome, String senha) {
         boolean b = buscarConta(numConta);
         if (!b){
-            contas.add(new ContaBonus(numConta));
+            contas.add(new ContaBonus(numConta, nome, senha));
         }
     }
 

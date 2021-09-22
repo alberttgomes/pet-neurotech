@@ -5,6 +5,7 @@ import java.util.Scanner;
 import br.unicap.pet.neurotech.control.ClienteController;
 //import br.unicap.pet.neurotech.model.dao.ClienteDAO;
 import br.unicap.pet.neurotech.model.dao.Conta;
+import br.unicap.pet.neurotech.model.exceptions.UsuarioNaoEncontradoException;
 
 public class LoginView {
 	
@@ -25,23 +26,21 @@ public class LoginView {
 		return senhaCliente;
 	}
     
-    public boolean Entrar(String nome, String senha) {
-    	
+    public boolean Entrar() throws UsuarioNaoEncontradoException {
+    	   String nomeL;
+    	   String senhaL;
+    	 
     	try (Scanner leitor = new Scanner(System.in)) {
 			System.out.println("<<AUTENTICAÇÃO>> \n");
 			System.out.println("Digite seu nome: \n");
-			nome = leitor.nextLine();
+			nomeL = leitor.nextLine();
 			System.out.println("Digite sua senha: \n");
-			senha = leitor.nextLine();
-
-	    	if (nomeCliente.equals(nome) && senhaCliente.equals(senha)) {
-	    		acesso = true;
-	    	    System.out.println("Entrando no perfil...");
-	    	} else {
-	    		System.out.println("Não encontrado!!!");
-	    	} 
-	 
-    	}
+			senhaL = leitor.nextLine();
+            
+			autenticar.entrar(nomeL, senhaL);
+			
+	   	} 
+    	   System.out.println("Usuário não foi encontrado!!");
 		   	
         return acesso;
     }

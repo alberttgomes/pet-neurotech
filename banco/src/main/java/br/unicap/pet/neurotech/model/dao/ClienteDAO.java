@@ -8,9 +8,7 @@ public interface ClienteDAO {
 
     void sacarConta(int numConta, float quantia) throws SaldoInsuficienteException , ContaInexistenteException ;
 
-    void criarConta(int numConta);
-
-    void criarContaBonus(int numConta);
+    void criarConta(int numConta, String nome, String senha);
 
     void depositarConta(int numConta, float quantia);
 
@@ -19,4 +17,8 @@ public interface ClienteDAO {
     float getSaldo(int numConta);
 
 	boolean buscarLogin(String nome, String senha) throws  UsuarioNaoEncontradoException;
+
+	void criarContaBonus(int numConta, String nome, String senha);
+
+	
 }

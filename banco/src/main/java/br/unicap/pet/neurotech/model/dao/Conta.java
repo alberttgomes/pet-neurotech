@@ -9,9 +9,11 @@ public class Conta {
     private String nome;
     private String senha;
     
-    public Conta(int num){
+    public Conta(int num, String name, String password){
         saldo = 0;
         numConta = num;
+        nome = name;
+        senha = password;
     }
     
     public int getNumero() {
