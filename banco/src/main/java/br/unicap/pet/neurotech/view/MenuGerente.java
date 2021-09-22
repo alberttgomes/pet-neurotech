@@ -8,7 +8,7 @@ public class MenuGerente {
         GerenteView cv = new GerenteView();
         int op;
         do {
-            System.out.println("\n<<MENU CLIENTE>>");
+            System.out.println("\n<<MENU GERENTE>>");
             System.out.println("1 - Criar Conta");
             System.out.println("2 - Render Bonus");
             System.out.println("3 - Voltar");

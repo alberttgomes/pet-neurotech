@@ -6,8 +6,10 @@ public class MenuPrincipal {
 
     public static void main(String[] args) {
         int op;
-        MenuCliente acessoCliente = new MenuCliente();
+        //MenuCliente acessoCliente = new MenuCliente();
         MenuGerente acessoGerente = new MenuGerente();
+        LoginView login = new LoginView();
+        
         do {
             
             System.out.println("<<MENU PRINCIPAL>>");
@@ -18,7 +20,7 @@ public class MenuPrincipal {
             switch (op) {
 
                 case 1:
-                    acessoCliente.Menu();
+                    login.Entrar(null, null);
                     break;
                 case 2:
                     acessoGerente.Menu();

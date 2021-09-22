@@ -4,11 +4,13 @@ import br.unicap.pet.neurotech.model.dao.ClienteDAO;
 import br.unicap.pet.neurotech.model.dao.ClienteDAOMemoria;
 import br.unicap.pet.neurotech.model.exceptions.ContaInexistenteException;
 import br.unicap.pet.neurotech.model.exceptions.SaldoInsuficienteException;
+import br.unicap.pet.neurotech.model.exceptions.UsuarioNaoEncontradoException;
+
 
 public class ClienteController {
 
     private ClienteDAO dao = ClienteDAOMemoria.getInstance();
-    //private ClienteDAO dao = new ClienteDAOMemoria();
+  
 
     public boolean buscar (int numConta){
         return dao.buscarConta(numConta);
@@ -25,4 +27,9 @@ public class ClienteController {
     public float getSaldo(int numConta) {
         return dao.getSaldo(numConta);
     }
+    
+    public boolean entrar(String nome, String senha) throws UsuarioNaoEncontradoException {
+    	return dao.buscarLogin(senha, senha);
+    }
+    
 }

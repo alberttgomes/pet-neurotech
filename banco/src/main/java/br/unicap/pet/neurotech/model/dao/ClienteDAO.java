@@ -17,4 +17,6 @@ public interface ClienteDAO {
     void renderBonus(int numConta);
 
     float getSaldo(int numConta);
+
+	boolean buscarLogin(String nome, String senha) throws  UsuarioNaoEncontradoException;
 }

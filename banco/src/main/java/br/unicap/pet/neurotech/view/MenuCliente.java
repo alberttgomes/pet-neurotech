@@ -6,6 +6,7 @@ public class MenuCliente {
 
     public void Menu() {
         ClienteView cv = new ClienteView();
+        
         int op;
         do {
             System.out.println("\n<<MENU CLIENTE>>");

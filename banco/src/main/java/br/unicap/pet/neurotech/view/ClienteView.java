@@ -12,7 +12,7 @@ public class ClienteView {
     public void sacar(){
         int numConta;
 
-        System.out.println("numero da conta ");
+        System.out.println("Número da conta: ");
         numConta = Leitor.getLeitor().nextInt();
         boolean haConta = acesso.buscar(numConta);
 
@@ -35,12 +35,12 @@ public class ClienteView {
     public void depositar(){
         int numConta;
 
-        System.out.println("numero da conta ");
+        System.out.println("Número da conta: ");
         numConta = Leitor.getLeitor().nextInt();
         boolean haConta = acesso.buscar(numConta);
 
         if(haConta){
-            System.out.println("Informe a quantia a Sacar: ");
+            System.out.println("Informe a quantia a Depositar: ");
             float quantia = Leitor.getLeitor().nextFloat();
             acesso.depositar(numConta,quantia);
         } else {
@@ -50,13 +50,13 @@ public class ClienteView {
 
     public void verSaldo() {
         int numConta;
-        System.out.println("numero da conta ");
+        System.out.println("Número da conta ");
         numConta = Leitor.getLeitor().nextInt();
         boolean haConta = acesso.buscar(numConta);
 
         if(haConta){
             float saldo = acesso.getSaldo(numConta);
-            System.out.format("o saldo da conta é %.2f",saldo);
+            System.out.format("Seu saldo é %.2f",saldo);
         } else {
             System.out.println("Conta Inexistente");
         }

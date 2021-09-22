@@ -6,11 +6,12 @@ import br.unicap.pet.neurotech.view.util.Leitor;
 public class GerenteView {
 
     GerenteController acesso = new GerenteController();
+   
     public void criarConta() {
-        System.out.println("numero da conta ");
+        System.out.println("Número da conta: ");
         int numConta = Leitor.getLeitor().nextInt();
         
-        System.out.println("é uma conta bonus?");
+        System.out.println("É uma conta bonus?");
         boolean ehBonus = Leitor.getLeitor().nextBoolean();
         if (ehBonus){
             acesso.criarContaBonus(numConta);
@@ -18,8 +19,9 @@ public class GerenteView {
             acesso.criarConta(numConta);
         }
     }
+    
     public void renderBonus() {
-        System.out.println("numero da conta ");
+        System.out.println("Número da conta: ");
         int numConta = Leitor.getLeitor().nextInt();
         acesso.renderBonus(numConta);
     }

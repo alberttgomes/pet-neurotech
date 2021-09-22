@@ -5,12 +5,14 @@ import java.util.List;
 
 import br.unicap.pet.neurotech.model.exceptions.ContaInexistenteException;
 import br.unicap.pet.neurotech.model.exceptions.SaldoInsuficienteException;
+//import br.unicap.pet.neurotech.model.exceptions.UsuárioNaoEncontradoException;
+import br.unicap.pet.neurotech.model.exceptions.UsuarioNaoEncontradoException;
 
 public class ClienteDAOMemoria implements ClienteDAO {
 
     private List<Conta> contas;
     private static ClienteDAOMemoria self;
-
+    private static ClienteDAOMemoria login;
 
     private ClienteDAOMemoria(){
         contas = new ArrayList<Conta>();
@@ -32,6 +34,13 @@ public class ClienteDAOMemoria implements ClienteDAO {
             self = new ClienteDAOMemoria();
         }
         return self;
+    }
+    
+    public static ClienteDAO getInstanceLogin(String nome, String senha) {
+    	if(login == null) {
+    		login = new ClienteDAOMemoria();
+    	}
+    	return login;
     }
 
     @Override
@@ -91,4 +100,27 @@ public class ClienteDAOMemoria implements ClienteDAO {
         }
         return -1;
     }
+    
+    @Override
+  	public boolean buscarLogin(String nome, String senha) throws  UsuarioNaoEncontradoException {
+  		boolean autenticar = false;
+  		if(login.equals(nome) && login.equals(senha)) {
+  			autenticar = true;
+  		} else {
+  			throw new  UsuarioNaoEncontradoException();		
+  		}
+  	
+  		return autenticar;
+  	}
+
+	
 }
+
+
+
+
+
+
+
+
+
