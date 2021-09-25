@@ -106,7 +106,7 @@ public class ClienteDAOMemoria implements ClienteDAO {
     @Override
   	public boolean buscarLogin(String nome, String senha) throws  UsuarioNaoEncontradoException {
   		boolean autenticar = false;
-  		if(login.equals(nome) && login.equals(senha)) {
+  		if(contas.equals(nome) && contas.equals(senha)) {
   			autenticar = true;
   		} else {
   			throw new  UsuarioNaoEncontradoException();		
