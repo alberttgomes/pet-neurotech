@@ -1,5 +1,5 @@
 package br.unicap.pet.neurotech.model.dao;
-
+/*
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,10 +64,10 @@ public class ClienteDAOMemoria implements ClienteDAO {
 
     
 	@Override
-    public void criarConta(int numConta, String nome, String senha) {
+    public void criarConta(int numConta) {
         boolean b = buscarConta(numConta);
-        if (!b){
-            Conta c = new Conta(numConta, nome, senha);
+        if (!b) {
+            Conta c = new Conta(numConta);
             contas.add(c);
         }
     }
@@ -86,10 +86,10 @@ public class ClienteDAOMemoria implements ClienteDAO {
 
     
 	@Override
-    public void criarContaBonus(int numConta, String nome, String senha) {
+    public void criarContaBonus(int numConta) {
         boolean b = buscarConta(numConta);
         if (!b){
-            contas.add(new ContaBonus(numConta, nome, senha));
+            contas.add(new ContaBonus(numConta));
         }
     }
 
@@ -116,13 +116,16 @@ public class ClienteDAOMemoria implements ClienteDAO {
   	}
 
 	
+
+
+	
 }
 
 
 
 
 
-
+*/
 
 
 

@@ -1,35 +1,32 @@
 package br.unicap.pet.neurotech.control;
 
 import br.unicap.pet.neurotech.model.dao.ClienteDAO;
-import br.unicap.pet.neurotech.model.dao.ClienteDAOMemoria;
+import br.unicap.pet.neurotech.model.dao.ContaDAODataBase;
 import br.unicap.pet.neurotech.model.exceptions.ContaInexistenteException;
 import br.unicap.pet.neurotech.model.exceptions.SaldoInsuficienteException;
-import br.unicap.pet.neurotech.model.exceptions.UsuarioNaoEncontradoException;
+
 
 
 public class ClienteController {
 
-    private ClienteDAO dao = ClienteDAOMemoria.getInstance();
+    private ClienteDAO dao = (ClienteDAO) ContaDAODataBase.getInstance();
   
 
-    public boolean buscar (int numConta){
-        return dao.buscarConta(numConta);
+    public boolean buscar (int login, int numConta){
+        return dao.buscarConta(login, numConta);
     }
 
-    public void sacar(int numConta, float quantia) throws SaldoInsuficienteException, ContaInexistenteException {
-        dao.sacarConta(numConta,quantia);
+    public void sacar(int login, int numConta, float quantia) throws SaldoInsuficienteException, ContaInexistenteException {
+        dao.sacarConta(login, numConta, quantia);
     }
 
-    public void depositar(int numConta, float quantia) {
-        dao.depositarConta(numConta,quantia);
+    public void depositar(int login, int numConta, float quantia) {
+        dao.depositarConta(login, numConta, quantia);
     }
 
-    public float getSaldo(int numConta) {
-        return dao.getSaldo(numConta);
+    public float getSaldo(int login, int numConta) {
+        return dao.getSaldo(login, numConta);
     }
     
-    public boolean entrar(String nome, String senha) throws UsuarioNaoEncontradoException {
-    	return dao.buscarLogin(nome, senha);
-    }
     
 }

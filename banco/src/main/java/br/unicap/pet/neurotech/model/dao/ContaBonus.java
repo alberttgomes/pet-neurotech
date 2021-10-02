@@ -5,8 +5,8 @@ public class ContaBonus extends Conta {
     private float bonus; 
    
     
-    public ContaBonus(int num, String nome, String senha) {
-        super(num, nome, senha);
+    public ContaBonus(int num) {
+        super(num);
         bonus = 0;
     }
 

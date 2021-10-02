@@ -4,21 +4,20 @@ import br.unicap.pet.neurotech.model.exceptions.*;
 
 public interface ClienteDAO {
     
-    boolean buscarConta(int numConta);
+    boolean buscarConta(int login, int numConta);
 
-    void sacarConta(int numConta, float quantia) throws SaldoInsuficienteException , ContaInexistenteException ;
+    void sacarConta(int login, int numConta, float quantia) throws SaldoInsuficienteException , ContaInexistenteException ;
 
-    void criarConta(int numConta, String nome, String senha);
+    void depositarConta(int login, int numConta, float quantia);
 
-    void depositarConta(int numConta, float quantia);
+    void renderBonus(int login, int numConta);
 
-    void renderBonus(int numConta);
+    float getSaldo(int login, int numConta);
 
-    float getSaldo(int numConta);
+	void criarContaBonus(int login, int numConta);
 
-	boolean buscarLogin(String nome, String senha) throws  UsuarioNaoEncontradoException;
+	void criarConta(int login, int numConta);
 
-	void criarContaBonus(int numConta, String nome, String senha);
 
 	
 }

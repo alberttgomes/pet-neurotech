@@ -10,11 +10,11 @@ public class LoginView {
 	
 	MenuCliente acessoCliente = new MenuCliente();
 	ClienteController autenticar = new ClienteController();
-	
+	String nomeL;
+    String senhaL;
+    boolean haUser = false;
+    
     public void Entrar() throws UsuarioNaoEncontradoException {
-    	   String nomeL = null;
-    	   String senhaL= null;
-    	   boolean haUser = autenticar.entrar(nomeL, senhaL);
     	 
     	try (Scanner leitor = new Scanner(System.in)) {
 			System.out.println("<<AUTENTICAÇÃO>> \n");
@@ -22,8 +22,9 @@ public class LoginView {
 			nomeL = leitor.nextLine();
 			System.out.println("Digite sua senha: \n");
 			senhaL = leitor.nextLine();
-            
-			if(haUser) {
+            haUser =  autenticar.entrar(nomeL, senhaL);
+			
+            if(haUser) {
 				System.out.println("Entrando...");
 				acessoCliente.Menu();
 			}
